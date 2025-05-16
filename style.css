@@ -1,0 +1,224 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #fdfcfb;
+    color: #333;
+    transition: background 0.3s ease, color 0.3s ease; /* For dark mode transition */
+}
+
+/* Header */
+header {
+    background: #fff4e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease; /* For dark mode transition */
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 2px;
+    transition: background-color 0.3s ease; /* For dark mode transition */
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease; /* For dark mode transition */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.product img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* For dark mode transition */
+}
+
+form button {
+    padding: 10px;
+    background-color: #c331c6;
+    color: white; /* Added text color for better contrast */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* For dark mode transition */
+}
+
+form button:hover {
+    background-color: #a627a9; /* Slightly darker on hover */
+}
+
+/* Footer */
+footer {
+    background: #e993eb;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    transition: background 0.3s ease; /* For dark mode transition */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 10px;
+    outline: none; /* Remove default focus outline */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background: #fff4e6;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease; /* For dark mode transition */
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav.show a {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    nav.show a:last-child {
+        border-bottom: none;
+    }
+
+    .product {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Light Mode (default) */
+body {
+    background: #fdfcfb;
+    color: #333;
+}
+
+header,
+footer {
+    background: #e993eb;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #333;
+    color: #fdfcfb;
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background: #555; /* Darker header/footer in dark mode */
+}
+
+body.dark-mode nav {
+    background: #555; /* Dark background for mobile nav in dark mode */
+}
+
+body.dark-mode nav a {
+    color: #fdfcfb;
+}
+
+body.dark-mode .menu-toggle .bar {
+    background-color: #fdfcfb;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+    background: #555;
+    color: #fdfcfb;
+    border: 1px solid #666;
+}
+
+body.dark-mode form button {
+    background-color: #a627a9; /* Slightly darker button in dark mode */
+    color: #fdfcfb; /* Ensure text is visible */
+}
